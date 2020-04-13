@@ -56,7 +56,7 @@
     }
   ],
   "dependencies": {
-    "@arkecosystem/utils": "0.8.3",
+    "@arkecosystem/utils": "git://github.com/Atomicwallet/arkecosystem-utils.git",
     "@types/bytebuffer": "^5.0.40",
     "ajv": "^6.10.2",
     "ajv-keywords": "^3.4.1",
