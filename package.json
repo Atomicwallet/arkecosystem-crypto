@@ -1,60 +1,6 @@
 {
-  "_from": "@arkecosystem/crypto@^2.6.9",
-  "_id": "@arkecosystem/crypto@2.6.10",
-  "_inBundle": false,
-  "_integrity": "sha512-FUd/h4RbqQWPWTVIEiKkzqbEyIZQ6L4qs0ViFdd775EvvN+sJt09yqvFbAQ8vYxpxBenhphMcHtP6luHJ6UrSg==",
-  "_location": "/@arkecosystem/crypto",
-  "_phantomChildren": {
-    "create-hash": "1.2.0",
-    "pbkdf2": "3.0.17",
-    "randombytes": "2.1.0"
-  },
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "@arkecosystem/crypto@^2.6.9",
-    "name": "@arkecosystem/crypto",
-    "escapedName": "@arkecosystem%2fcrypto",
-    "scope": "@arkecosystem",
-    "rawSpec": "^2.6.9",
-    "saveSpec": null,
-    "fetchSpec": "^2.6.9"
-  },
-  "_requiredBy": [
-    "/atomic-core"
-  ],
-  "_resolved": "https://registry.npmjs.org/@arkecosystem/crypto/-/crypto-2.6.10.tgz",
-  "_shasum": "e831cb85746ca3790956e35aad65098f0491095f",
-  "_spec": "@arkecosystem/crypto@^2.6.9",
-  "_where": "/Users/artursaf/Development/cordova/atomic-mobile/node_modules/atomic-core",
-  "browser": "dist/index-browser",
-  "bundleDependencies": false,
-  "contributors": [
-    {
-      "name": "François-Xavier Thoorens",
-      "email": "fx.thoorens@ark.io"
-    },
-    {
-      "name": "Brian Faust",
-      "email": "brian@ark.io"
-    },
-    {
-      "name": "Alex Barnsley",
-      "email": "alex@ark.io"
-    },
-    {
-      "name": "Lúcio Rubens",
-      "email": "lucio@ark.io"
-    },
-    {
-      "name": "Juan A. Martín",
-      "email": "juan@ark.io"
-    },
-    {
-      "name": "Joshua Noack",
-      "email": "joshua@ark.io"
-    }
-  ],
+  "name": "@arkecosystem/crypto",
+  "version": "2.6.10",
   "dependencies": {
     "@arkecosystem/utils": "git://github.com/Atomicwallet/arkecosystem-utils.git",
     "@types/bytebuffer": "^5.0.40",
@@ -99,10 +45,6 @@
   "license": "MIT",
   "main": "dist/index",
   "module": "dist/index",
-  "name": "@arkecosystem/crypto",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "yarn clean && tsc",
     "build:rollup": "yarn clean && tsc && rollup -c",
@@ -111,6 +53,5 @@
     "compile": "../../node_modules/typescript/bin/tsc",
     "prepublishOnly": "yarn build"
   },
-  "types": "dist/index",
-  "version": "2.6.10"
+  "types": "dist/index"
 }
