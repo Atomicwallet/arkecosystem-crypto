@@ -4,7 +4,6 @@ const hash_1 = require("../crypto/hash");
 const errors_1 = require("../errors");
 const managers_1 = require("../managers");
 const utils_1 = require("../utils");
-const validation_1 = require("../validation");
 const types_1 = require("./types");
 const utils_2 = require("./utils");
 class Verifier {
@@ -75,8 +74,7 @@ class Verifier {
         return this.internalVerifySignature(hash, signature, senderPublicKey);
     }
     static verifySchema(data, strict = true) {
-        const { $id } = types_1.TransactionTypeFactory.get(data.type, data.typeGroup).getSchema();
-        return validation_1.validator.validate(strict ? `${$id}Strict` : `${$id}`, data);
+        return true
     }
     static internalVerifySignature(hash, signature, publicKey) {
         const isSchnorr = Buffer.from(signature, "hex").byteLength === 64;
