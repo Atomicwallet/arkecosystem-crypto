@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const enums_1 = require("../enums");
 const errors_1 = require("../errors");
-const validation_1 = require("../validation");
 const types_1 = require("./types");
 const internal_transaction_type_1 = require("./types/internal-transaction-type");
 class TransactionRegistry {
@@ -22,7 +21,6 @@ class TransactionRegistry {
         this.registerTransactionType(types_1.HtlcRefundTransaction);
         // registering multisignature legacy schema separate after splitting the main
         // multisignature schema into current implementation and legacy
-        validation_1.validator.extendTransaction(types_1.schemas.multiSignatureLegacy, false);
     }
     registerTransactionType(constructor) {
         const { typeGroup, type } = constructor;
@@ -50,7 +48,6 @@ class TransactionRegistry {
         this.transactionTypes.delete(internalType);
     }
     updateSchemas(transaction, remove) {
-        validation_1.validator.extendTransaction(transaction.getSchema(), remove);
     }
 }
 exports.transactionRegistry = new TransactionRegistry();

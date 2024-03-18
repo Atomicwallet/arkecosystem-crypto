@@ -4,7 +4,6 @@ const crypto_1 = require("../crypto");
 const errors_1 = require("../errors");
 const config_1 = require("../managers/config");
 const utils_1 = require("../utils");
-const validation_1 = require("../validation");
 const deserializer_1 = require("./deserializer");
 const serializer_1 = require("./serializer");
 class Block {
@@ -33,32 +32,7 @@ class Block {
         }
     }
     static applySchema(data) {
-        let result = validation_1.validator.validate("block", data);
-        if (!result.error) {
-            return result.value;
-        }
-        result = validation_1.validator.validateException("block", data);
-        for (const err of result.errors) {
-            let fatal = false;
-            const match = err.dataPath.match(/\.transactions\[([0-9]+)\]/);
-            if (match === null) {
-                if (!utils_1.isException(data)) {
-                    fatal = true;
-                }
-            }
-            else {
-                const txIndex = match[1];
-                const tx = data.transactions[txIndex];
-                if (tx.id === undefined || !utils_1.isException(tx)) {
-                    fatal = true;
-                }
-            }
-            if (fatal) {
-                throw new errors_1.BlockSchemaError(data.height, `Invalid data${err.dataPath ? " at " + err.dataPath : ""}: ` +
-                    `${err.message}: ${JSON.stringify(err.data)}`);
-            }
-        }
-        return result.value;
+        return true
     }
     static deserialize(hexString, headerOnly = false) {
         return deserializer_1.Deserializer.deserialize(hexString, headerOnly).data;

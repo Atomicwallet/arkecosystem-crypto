@@ -1,11 +1,9 @@
 {
   "name": "@arkecosystem/crypto",
-  "version": "2.6.10",
+  "version": "2.6.110",
   "dependencies": {
     "@arkecosystem/utils": "https://github.com/Atomicwallet/arkecosystem-utils.git",
     "@types/bytebuffer": "5.0.40",
-    "ajv": "6.10.2",
-    "ajv-keywords": "3.4.1",
     "bcrypto": "https://github.com/Atomicwallet/bcrypto.git#bigint-function",
     "bip32": "2.0.3",
     "bip39": "3.0.2",
