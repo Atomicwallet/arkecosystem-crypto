@@ -1,6 +1,6 @@
 {
   "name": "@arkecosystem/crypto",
-  "version": "2.6.10",
+  "version": "2.6.110",
   "dependencies": {
     "@arkecosystem/utils": "https://github.com/Atomicwallet/arkecosystem-utils.git",
     "@types/bytebuffer": "5.0.40",
